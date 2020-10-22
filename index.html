@@ -10,10 +10,15 @@
 </head>
 
 <body>
-    <audio src="./audio/song.mp3" id="audio"></audio>
-    <div id="cursor"></div>
-    <video id="video" style="visibility: hidden;"></video>
+
+    <h1>vangbal game!</h1>
+    <p>Let op! Je hand moet op het scherm zijn om het spelletje te laten beginnen</p>
+    <p>vang de groene en ... bollen met je hand en scoor een zo groot mogelijke score!</p>
+    <div id="cursor" class="hebben_we_nodig"></div>
+    <video id="video" class="video"></video>
     <canvas id="canvas"></canvas>
+
+    <input type="button" value="Play again" onClick="window.location.reload(true)">
 
     <script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"></script>
     <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>

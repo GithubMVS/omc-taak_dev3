@@ -1,20 +1,16 @@
+
+body {
+background: #ABE6CE;
+}
 canvas {
-	border: 5px solid green;
-	 position: fixed;
-            right: 0;
-            bottom: 0;
-            background: #000;
+	border: 1rem solid #DCEDC2;
 }
 
+.video{
 
-#cursor {
- display: none;
-            position: fixed;
-            z-index: 3;
-            width: 10px;
-            height: 10px;
-            background: red;
-            display: none;
-            margin-top: -5px;
-            margin-left: -5px;
+      visibility: hidden;
+}
+
+.hebben_we_nodig{
+      visibility: hidden;
 }

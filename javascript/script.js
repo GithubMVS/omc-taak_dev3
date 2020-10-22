@@ -1,5 +1,3 @@
-
-
 // Setup HandTrack JS
 const modelParams = {
     flipHorizontal: true,   // flip e.g for video
@@ -27,7 +25,7 @@ const ctx = canvas.getContext('2d');
 let model;
 
 // Ball intervals
-let spawnRate = 1000;
+let spawnRate = 2500;
 let spawnRateOfDescent = 2;
 let lastSpawn = -10;
 let objects = [];
@@ -41,34 +39,48 @@ let current_y = 0;
 let score = 0;
 let counter = canvas.getContext('2d');
 
+// Generate random balls
 
 
-// genereren van random ballen
+
+
+
 const spawnRandomObject = () => {
 
     let t;
 
     if (Math.random() < 0.50) {
-        t = "orange";
+        t = "#ABE6CE";
     } else {
-        t = "yellow";
+        t = "#DCEDC2";
     }
 
     let object = {
         type: t,
         x: Math.random() * (canvas.width - 30) + 15,
         y: 0,
-        r: 80
+        r: 30
     }
 
     objects.push(object);
 }
 
 // Hittest calculation
-isIntersect = (point, circle) => {
-    const sqrt = Math.sqrt(Math.pow((point.x - circle.x), 2) + Math.pow((point.y - circle.y), 2));
-    return sqrt < circle.r;
+
+
+
+const isIntersect = (tracker, circle) => {
+    const distSq =
+        ((tracker.x - circle.x) ** 2) +
+        ((tracker.y - circle.y) ** 2);
+
+    const radSumSq = (tracker.r + circle.r) ** 2;
+
+    if (distSq == radSumSq) return 1;
+    else if (distSq > radSumSq) return -1;
+    else return 0;
 }
+
 
 // Init HandTrackJS
 handTrack.startVideo(video).then(status => {
@@ -86,15 +98,10 @@ handTrack.startVideo(video).then(status => {
 })
 
 // Game logica
-
-
-
-
-
 const runDetection = () => {
 
-    ctx.font = "30px Arial";
-    ctx.fillText(score, 5, 40);
+    ctx.font = "3rem helvetica";
+    ctx.fillText(score, 5, 80);
 
     model.detect(video).then(predictions => {
 
@@ -106,7 +113,6 @@ const runDetection = () => {
             const centerY = y + (height / 2);
 
             cursor.style.display = "block";
-            body.style.background = "lightgreen";
 
             let tracker = canvas.getContext("2d");
             tracker.beginPath();
@@ -132,12 +138,15 @@ const runDetection = () => {
                 object.y += spawnRateOfDescent;
 
                 // Hittest detect
-                if (isIntersect({ x: centerX, y: centerY }, object)) {
+                if (isIntersect({ x: centerX, y: centerY, r: 50 }, object) >= 0) {
                     object.hit = true;
+
                     score += 1;
                     ctx.fillText(score, 5, 40);
-                    continue; // Rendered geen hit meer.
+
+                    continue; // Don't render anymore on hit
                 }
+
 
                 ctx.beginPath();
                 ctx.arc(object.x, object.y, object.r, 0, Math.PI * 2);
@@ -146,7 +155,7 @@ const runDetection = () => {
                 ctx.fill();
             }
         } else {
-            body.style.background = "red";
+            //body.style.background = "red"; // for testing
             cursor.style.display = "none";
         }
 
@@ -158,5 +167,3 @@ const runDetection = () => {
 handTrack.load(modelParams).then(lmodel => {
     model = lmodel;
 });
-
-
