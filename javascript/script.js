@@ -39,11 +39,10 @@ let current_y = 0;
 let score = 0;
 let counter = canvas.getContext('2d');
 
+// Game over
+let gameOverScreen = document.getElementById('gameover');
+
 // Generate random balls
-
-
-
-
 
 const spawnRandomObject = () => {
 
@@ -137,6 +136,10 @@ const runDetection = () => {
                 let object = objects[i];
                 object.y += spawnRateOfDescent;
 
+                if ((object.y + object.r) >= canvas.height) {
+                    gameOver();
+                }
+
                 // Hittest detect
                 if (isIntersect({ x: centerX, y: centerY, r: 50 }, object) >= 0) {
                     object.hit = true;
@@ -162,6 +165,25 @@ const runDetection = () => {
         requestAnimationFrame(runDetection);
     });
 }
+
+const gameOver = () => {
+    // Clear the points
+    score = 0;
+
+    // Clear the objects
+    objects = [];
+
+    // Restarten van het gegeven...
+    gameOverScreen.classList.remove('invisible');
+
+    document.getElementById("play_again").addEventListener("click", function () {
+        location.reload();
+    });
+
+}
+
+
+
 
 
 handTrack.load(modelParams).then(lmodel => {
