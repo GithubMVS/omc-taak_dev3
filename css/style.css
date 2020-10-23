@@ -44,9 +44,7 @@ canvas {
       margin: 2rem;
 }
 
-.speel_opnieuw{
-      margin: 2rem;
-}
+
 
 #gameover h2 {
       font-size: var(--fontm);
@@ -59,7 +57,8 @@ canvas {
       background: var(--groen);
       padding: 1rem 3rem;
       font-size: 2rem;
-      color:  var(--orange);
+      color:  #FF8C94;
+      text-transform: uppercase;
       margin: 3rem;
       border-radius: var(--space);
 }
