@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
+    <title>Hand-Tracking game</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,18 +12,15 @@
 <body>
     <div id="gameover" class="invisible">
 
-        <h2>Het spel is afgelopen</h2>
+        <h2 class="het spel is afgelopen">Het spel is afgelopen</h2>
         <a href="#" id="play_again">Speel opnieuw</a>
     </div>
-    <h1>vangbal game!</h1>
-    <p>Let op! Je hand moet op het scherm zijn om het spelletje te laten beginnen</p>
-    <p>vang de groene en ... bollen met je hand en scoor een zo groot mogelijke score!</p>
+    <h1 class="titel_game">vangbal game!</h1>
+    <p class="Waarschuwing_game">Let op! Je hand moet op het scherm zijn om het spelletje te laten beginnen</p>
+    <p class="uitleg_game">vang de bolletjes met je hand en scoor een zo groot mogelijke punten!</p>
     <div id="cursor" class="hebben_we_nodig"></div>
     <video id="video" class="video"></video>
     <canvas id="canvas"></canvas>
-
-    <input type="button" value="Play again" onClick="window.location.reload(true)">
-
     <script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"></script>
     <script src="https://code.createjs.com/1.0.0/easeljs.min.js"></script>
     <script src="./javascript/script.js"></script>
