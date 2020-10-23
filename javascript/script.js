@@ -15,10 +15,10 @@ navigator.getUserMedia =
 
 
 //selecteer alles in mijn html
-const body = document.getElementsByTagName("BODY")[0];
-const video = document.querySelector('#video');
+const body = document.querySelector('body'); // hier queary selector body
+const video = document.getElementById('video');
 const audio = document.getElementById('audio');
-const canvas = document.querySelector('#canvas');
+const canvas = document.getElementById('canvas');
 const cursor = document.getElementById('cursor');
 const ctx = canvas.getContext('2d');
 
@@ -40,22 +40,22 @@ let score = 0;
 let counter = canvas.getContext('2d');
 
 // Game over
-let gameOverScreen = document.getElementById('gameover');
+const gameOverScreen = document.getElementById('gameover');
 
 // Generate random balls
 
 const spawnRandomObject = () => {
 
-    let t;
+    let color;
 
     if (Math.random() < 0.50) {
-        t = "#ABE6CE";
+        color = "#ABE6CE";
     } else {
-        t = "#DCEDC2";
+        color = "#DCEDC2";
     }
 
     let object = {
-        type: t,
+        type: color,
         x: Math.random() * (canvas.width - 30) + 15,
         y: 0,
         r: 30

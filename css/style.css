@@ -1,9 +1,22 @@
+:root {
+      --space: 1rem;
+      --fonts: 1rem;
+      --fontm: 2rem;
+      --fontl: 3rem;
+
+      --fontfam: Helvetica, Arial, sans-serif;
+
+      --orange: #FFD3B5;
+      --groen:  #DCEDC2;
+}
 
 body {
-background: #ABE6CE;
+      background: #ABE6CE;
 }
 canvas {
-	border: 1rem solid #DCEDC2;
+      border: var(--space) solid var(--groen);
+      display: flex;
+      margin: 0 auto;
 }
 
 .invisible {
@@ -12,6 +25,7 @@ canvas {
 
 .video{
       visibility: hidden;
+      position: absolute;
 }
 
 .hebben_we_nodig{
@@ -19,7 +33,7 @@ canvas {
 }
 
 #gameover {
-      background: #FFD3B5;
+      background: var(--orange);
       padding-top: 2rem;
       height: 120vw;
       width: 100vw;
@@ -35,28 +49,28 @@ canvas {
 }
 
 #gameover h2 {
-      font-size: 2em;
+      font-size: var(--fontm);
       text-transform: uppercase;
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: var(--fontfam);
       font-weight: 800;
 }
 
 #gameover a {
-     
-      background: #DCEDC2;
+      background: var(--groen);
       padding: 1rem 3rem;
       font-size: 2rem;
-      color:  #FFD3B5;
-      padding: 1rem 3rem;;
+      color:  var(--orange);
       margin: 3rem;
-      border-radius: 1rem;
+      border-radius: var(--space);
 }
+
 .speel_opnieu{
       margin: 2rem;
 }
+
 .titel_game{
-      font-size: 3rem; 
-      font-family: Helvetica, Arial, sans-serif;
+      font-size: var(--fontl); 
+      font-family: var(--fontfam);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -65,33 +79,30 @@ canvas {
 }
 
 .waarschuwing_game{
-      font-size: 1rem; 
-      font-family: Helvetica, Arial, sans-serif;
+      font-size: var(--fonts); 
+      font-family: var(--fontfam);
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 3rem;
-
 }
 
 .uitleg_game{
-      font-size: 1rem;     
-      font-family: Helvetica, Arial, sans-serif;
+      font-size: var(--fonts);     
+      font-family: var(--fontfam);
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 1rem;
-  
+      margin: var(--space);
 }
 
 .uitleg_title{
-      font-size: 1rem;
-      font-family: Helvetica, Arial, sans-serif;
+      font-size: var(--fonts);
+      font-family: var(--fontfam);
       display: flex;
       justify-content: center;
       align-items: center;
       font-weight: 800;
       margin-top: 2rem;
       color: red;
-
 }
