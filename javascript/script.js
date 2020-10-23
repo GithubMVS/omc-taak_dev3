@@ -115,11 +115,11 @@ const runDetection = () => {
 
             let tracker = canvas.getContext("2d");
             tracker.beginPath();
-            tracker.fillStyle = "blue";
+            tracker.fillStyle = "#FFAAA6";
             tracker.arc(centerX, centerY, 50, 0, 2 * Math.PI);
             tracker.fill();
             tracker.lineWidth = 10;
-            tracker.strokeStyle = "yellow";
+            tracker.strokeStyle = "#FFD3B5";
             tracker.stroke();
             tracker.closePath();
 
@@ -181,9 +181,6 @@ const gameOver = () => {
     });
 
 }
-
-
-
 
 
 handTrack.load(modelParams).then(lmodel => {

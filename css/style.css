@@ -11,7 +11,6 @@ canvas {
 }
 
 .video{
-
       visibility: hidden;
 }
 
@@ -20,23 +19,41 @@ canvas {
 }
 
 #gameover {
-      background: #780505;
-      position: fixed;
-      height: 100vh;
+      background: #FFD3B5;
+      padding-top: 2rem;
+      height: 120vw;
       width: 100vw;
       text-align: center;
 }
 
+.afgelopen{
+      margin: 2rem;
+}
+
+.speel_opnieuw{
+      margin: 2rem;
+}
+
 #gameover h2 {
       font-size: 2em;
+      text-transform: uppercase;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 800;
 }
 
 #gameover a {
-      background: yellow;
-      padding :5rem;
+     
+      background: #DCEDC2;
+      padding: 1rem 3rem;
+      font-size: 2rem;
+      color:  #FFD3B5;
+      padding: 1rem 3rem;;
+      margin: 3rem;
       border-radius: 1rem;
 }
-
+.speel_opnieu{
+      margin: 2rem;
+}
 .titel_game{
       font-size: 3rem; 
       font-family: Helvetica, Arial, sans-serif;
