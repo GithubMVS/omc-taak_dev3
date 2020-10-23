@@ -33,6 +33,48 @@ canvas {
 
 #gameover a {
       background: yellow;
-      padding :11px;
-      border-radius: 10px;
+      padding :5rem;
+      border-radius: 1rem;
+}
+
+.titel_game{
+      font-size: 3rem; 
+      font-family: Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem;
+      font-weight: 800;
+}
+
+.waarschuwing_game{
+      font-size: 1rem; 
+      font-family: Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+
+}
+
+.uitleg_game{
+      font-size: 1rem;     
+      font-family: Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem;
+  
+}
+
+.uitleg_title{
+      font-size: 1rem;
+      font-family: Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 800;
+      margin-top: 2rem;
+      color: red;
+
 }
